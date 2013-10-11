@@ -2,12 +2,14 @@
 <head>
   <title>AgularJS</title>
   <script type="text/javascript" src="angular.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 
 <div ng-app="">
-  <input type="text" ng-model="data.message">
-  <h1>{{data.message}}</h1>
+  <div ng-controller="firstCtrl">
+    <h1>{{data.message}}</h1>
+  </div>
 </div>
 
 </body>
