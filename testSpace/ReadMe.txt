@@ -1,4 +1,5 @@
-Hey,
-You found my repository for learning AngularJS.  This code doesn't do much exciting other than showing I am working on this project.  If you want to learn Angular JS I suggest watching this guy's videos.  http://egghead.io/
+Greetings hacker,
+
+You've found the code base where I'm learning AngularJS.  I don't think it means much to anyone but go ahead browse.  The videos I'm learning from are avaliable at egghead.io and he's really good.
 
 Peace

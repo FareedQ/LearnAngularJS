@@ -65,6 +65,14 @@ myApp.directive("enter", function(){
 	}
 });
 
+myApp.directive("moretweets", function(){
+	return function(scope, element, attrs){
+		element.bind("mouseenter", function(){
+			scope.$apply(attrs.moretweets);
+	    })
+	}
+});
+
 myApp.directive("leave", function(){
 	return function(scope, element, attrs) {
 		element.bind("mouseleave", function(){
@@ -84,4 +92,10 @@ function secondCtrl($scope, Data) {
 
 function thirdCtrl($scope, Data) {
 	$scope.superHeros = Data.superHeros;
+}
+
+function twitterCtrl($scope){
+	$scope.addMoreTweets = function(){
+		alert("Adding more tweets!");
+	}
 }
