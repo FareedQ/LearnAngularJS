@@ -25,6 +25,31 @@ myApp.filter('reverse', function(Data){
 	}
 });
 
+myApp.directive("batman", function(){
+	return {
+		restrict: "E",
+		template: "<div>Here I am to save the day</div>"
+	}
+});
+
+myApp.directive("superman", function(){
+	return {
+		restrict: "A",
+		link: function(){
+			alert("Here I am to save the day")
+		}
+	}
+});
+
+myApp.directive("flash", function(){
+	return {
+		restrict: "C",
+		link: function(){
+			alert("Here I am to save the day")
+		}
+	}
+});
+
 function firstCtrl($scope, Data) {
 	$scope.data = Data;
 }

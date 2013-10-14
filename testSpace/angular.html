@@ -14,16 +14,16 @@
     <h1>{{data.message}}</h1>
   </div>
 
-
   <div ng-controller="secondCtrl">
     <input type="text" ng-model="data.message">
     <h1>{{data.message|reverse}}</h1>
   </div>
+  <hr/>
 
   <div ng-controller="thirdCtrl">
-  	This text will search hero: <input type="text" ng-model="searchText.hero">
-  	This text will search secret identity: <input type="text" ng-model="searchText.secretIdentity">
-  	This text will search either: <input type="text" ng-model="searchText">
+  	This text will search hero: <input type="text" ng-model="searchText.hero"><br/>
+  	This text will search secret identity: <input type="text" ng-model="searchText.secretIdentity"><br/>
+  	This text will search either: <input type="text" ng-model="searchText.$"><br/>
 
   	<table>
   	  <tr ng-repeat="superHero in superHeros | filter:searchText">
@@ -31,8 +31,11 @@
   	    <td>{{superHero.secretIdentity}}</td>
   	  </tr>
   	</table>
+  	<br/>
   </div>
+  <hr/>
 
+  <batman superman class="flash"></batman>
 
 </div>
 
