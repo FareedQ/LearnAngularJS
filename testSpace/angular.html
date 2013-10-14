@@ -2,12 +2,12 @@
 <head>
   <title>AgularJS</title>
   <script type="text/javascript" src="angular.js"></script>
+  <script type="text/javascript" src="filters.js"></script>
   <script type="text/javascript" src="main.js"></script>
 </head>
 <body>
 
 <div ng-app="myApp">
-
 
   <div ng-controller="firstCtrl">
     <input type="text" ng-model="data.message">
@@ -18,6 +18,19 @@
   <div ng-controller="secondCtrl">
     <input type="text" ng-model="data.message">
     <h1>{{data.message|reverse}}</h1>
+  </div>
+
+  <div ng-controller="thirdCtrl">
+  	This text will search hero: <input type="text" ng-model="searchText.hero">
+  	This text will search secret identity: <input type="text" ng-model="searchText.secretIdentity">
+  	This text will search either: <input type="text" ng-model="searchText">
+
+  	<table>
+  	  <tr ng-repeat="superHero in superHeros | filter:searchText">
+  	    <td>{{superHero.hero}}</td>
+  	    <td>{{superHero.secretIdentity}}</td>
+  	  </tr>
+  	</table>
   </div>
 
 
