@@ -15,9 +15,18 @@ myApp.config(function($routeProvider){
             template:"{{model.message}}",
             controller:"mapCtrl"
         })
+        .when('/:unfortunate',
+        {
+            redirectTo:function(routeParams, path, search){
+                console.log(routeParams);
+                console.log(path);
+                console.log(search);
+                return("/");
+            }
+        })
         .otherwise(
         {
-            template:"no go!!"
+            redirectTo:'/'
         });
 });
 
