@@ -10,6 +10,11 @@ myApp.config(function($routeProvider){
         {
             template:"yum!!"
         })
+        .when('/map/:country/:city',
+        {
+            template:"{{model.message}}",
+            controller:"mapCtrl"
+        })
         .otherwise(
         {
             template:"no go!!"
@@ -21,3 +26,10 @@ myApp.controller("appCtrl", function($scope){
         message:"This is my app!!"
     }
 });
+
+myApp.controller("mapCtrl", function($scope, $routeParams){
+    $scope.model = {
+        message: "You live in " + $routeParams.city + " which is in "
+            + $routeParams.country[0].toUpperCase() + $routeParams.country.substring(1).toLowerCase()
+    }
+})
