@@ -5,12 +5,12 @@ app.config(function($routeProvider){
         .when('/',
         {
             templateUrl: "lesson29-2.html",
-            controller: "AppCtrl",
+            controller: "ViewCtrl",
             resolve: {
                 app: function($q, $timeout){
                     var defer = $q.defer();
                     $timeout(function(){
-                        defer.resolve();
+                        defer.reject("network is down");
                     }, 2000);
                     return defer.promise;
                 }
@@ -18,7 +18,13 @@ app.config(function($routeProvider){
         })
 });
 
-app.controller("AppCtrl", function($scope, $q){
+app.controller("AppCtrl", function($rootScope){
+    $rootScope.$on("$routeChangeError", function(event, current, previous, rejection){
+        console.log(rejection);
+    })
+});
+
+app.controller("ViewCtrl", function($scope, $q){
 
     var defer = $q.defer();
     defer.promise
